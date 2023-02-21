@@ -69,7 +69,7 @@ public class editListDetailsServlet extends HttpServlet {
 			listToUpdate.setListOfSquish(selectedItemsInList);
 		}
 		
-		listToUpdate.setspeciesListName(newListName);
+		listToUpdate.setSpeciesListName(newListName);
 		listToUpdate.setSpecies(newSpecies);
 		
 		dao.updateList(listToUpdate);

@@ -1,5 +1,3 @@
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +10,7 @@ import model.Squishmallow;
 /**
  * @author Abigail Boggs - amboggs
  * CIS175 - Spring 2023
- * Feb 20, 2023
+ * Feb 21, 2023
  */
 
 /**
@@ -25,14 +23,20 @@ public class SquishDetailsTester {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Species dog = new Species("Dog");
-		SpeciesHelper sh = new SpeciesHelper();
-		
-		sh.insertSpecies(dog);
+		Species cat = new Species("cat");
 		SquishDetailsHelper sdh = new SquishDetailsHelper();
+		Squishmallow corinne = new Squishmallow("Corinne", "Regular", "12");
+		Squishmallow tally = new Squishmallow("Tally", "Regular", "5");
 		
-		SquishDetails dogsList = new SquishDetails("Dog's List", dog);
-		sdh.insertNewSquishListDetails(dogsList);
+		List<Squishmallow> catsSquish = new ArrayList<Squishmallow>();
+		catsSquish.add(corinne);
+		catsSquish.add(tally);
+				
+
+		SquishDetails catsList = new SquishDetails("Cats List", cat);
+		catsList.setListOfSquish(catsSquish);
+		
+		sdh.insertNewSquishListDetails(catsList);
 		
 		List<SquishDetails> allLists = sdh.getLists();
 		
@@ -40,6 +44,7 @@ public class SquishDetailsTester {
 			System.out.println(a.toString());
 		}
 		
+
 	}
 
 }

@@ -1,7 +1,7 @@
 /**
  * @author Abigail Boggs - amboggs
  * CIS175 - Spring 2023
- * Feb 20, 2023
+ * Feb 21, 2023
  */
 package controller;
 
@@ -37,19 +37,18 @@ public class SquishDetailsHelper {
 	}
 	
 	public void deleteList(SquishDetails toDelete) {
-		EntityManager em= emfactory.createEntityManager();
+		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		TypedQuery<SquishDetails> typedQuery = em.createQuery("select detail from SquishDetails detail where detail.id = :selectedId", SquishDetails.class);
-	
-			typedQuery.setParameter("selectedId", toDelete.getId());
-			
-			typedQuery.setMaxResults(1);
-			
-			SquishDetails result = typedQuery.getSingleResult();
-			
-			em.remove(result);
-			em.getTransaction().commit();
-			em.close();
+		
+		typedQuery.setParameter("selectedId", toDelete.getId());
+		typedQuery.setMaxResults(1);
+		
+		SquishDetails result = typedQuery.getSingleResult();
+		
+		em.remove(result);
+		em.getTransaction().commit();
+		em.close();
 	}
 	
 	public SquishDetails searchForListDetailsById(Integer tempId) {
@@ -61,9 +60,8 @@ public class SquishDetailsHelper {
 	}
 	
 	public void updateList(SquishDetails toEdit) {
-		EntityManager em= emfactory.createEntityManager();
+		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		
 		em.merge(toEdit);
 		em.getTransaction().commit();
 		em.close();
