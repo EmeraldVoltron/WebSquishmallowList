@@ -1,7 +1,7 @@
 /**
  * @author Abigail Boggs - amboggs
  * CIS175 - Spring 2023
- * Feb 20, 2023
+ * Feb 21, 2023
  */
 package controller;
 
@@ -31,7 +31,7 @@ public class SpeciesHelper {
 	}
 	
 	public List<Species> showAllSpecies(){
-		EntityManager em = emfactory.createEntityManager();
+		EntityManager em= emfactory.createEntityManager();
 		List<Species> allSpecies = em.createQuery("SELECT s FROM Species s").getResultList();
 		return allSpecies;
 	}
@@ -39,20 +39,18 @@ public class SpeciesHelper {
 	public Species findSpecies(String nameToLookUp) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		
 		TypedQuery<Species> typedQuery = em.createQuery("select sh from Species sh where sh.speciesName = :selectedName", Species.class);
+		
 		typedQuery.setParameter("selectedName", nameToLookUp);
 		typedQuery.setMaxResults(1);
-		Species foundSpecies;
 		
+		Species foundSpecies;
 		try {
 			foundSpecies = typedQuery.getSingleResult();
 		} catch (NoResultException ex) {
 			foundSpecies = new Species(nameToLookUp);
 		}
-		
 		em.close();
 		return foundSpecies;
 	}
-	
 }

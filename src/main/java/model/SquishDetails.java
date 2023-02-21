@@ -1,7 +1,7 @@
 /**
  * @author Abigail Boggs - amboggs
  * CIS175 - Spring 2023
- * Feb 20, 2023
+ * Feb 21, 2023
  */
 package model;
 
@@ -35,20 +35,20 @@ public class SquishDetails {
 	}
 	
 	public SquishDetails(int id, String speciesListName, Species species, List<Squishmallow> listOfSquish) {
-		this.id = id;
-		this.speciesListName =speciesListName;
+		this.id=id;
+		this.speciesListName = speciesListName;
 		this.species = species;
 		this.listOfSquish = listOfSquish;
 	}
 	
 	public SquishDetails(String speciesListName, Species species, List<Squishmallow> listOfSquish) {
-		this.speciesListName =speciesListName;
+		this.speciesListName = speciesListName;
 		this.species = species;
 		this.listOfSquish = listOfSquish;
 	}
 	
 	public SquishDetails(String speciesListName, Species species) {
-		this.speciesListName =speciesListName;
+		this.speciesListName = speciesListName;
 		this.species = species;
 	}
 
@@ -69,14 +69,14 @@ public class SquishDetails {
 	/**
 	 * @return the speciesListName
 	 */
-	public String getspeciesListName() {
+	public String getSpeciesListName() {
 		return speciesListName;
 	}
 
 	/**
 	 * @param speciesListName the speciesListName to set
 	 */
-	public void setspeciesListName(String speciesListName) {
+	public void setSpeciesListName(String speciesListName) {
 		this.speciesListName = speciesListName;
 	}
 
@@ -110,10 +110,9 @@ public class SquishDetails {
 
 	@Override
 	public String toString() {
-		return "SquishDetails [id=" + id + ", speciesListName=" + speciesListName + ", species=" + species + ", listOfSquish="
-				+ listOfSquish + "]";
+		return "SquishDetails [id=" + id + ", speciesListName=" + speciesListName + ", species=" + species
+				+ ", listOfSquish=" + listOfSquish + "]";
 	}
-	
 	
 	
 }

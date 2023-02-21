@@ -1,7 +1,7 @@
 /**
  * @author Abigail Boggs - amboggs
  * CIS175 - Spring 2023
- * Feb 20, 2023
+ * Feb 21, 2023
  */
 package model;
 
@@ -28,7 +28,7 @@ public class Species {
 	
 	public Species(int id, String speciesName) {
 		super();
-		this.id=id;
+		this.id = id;
 		this.speciesName = speciesName;
 	}
 	
@@ -69,5 +69,6 @@ public class Species {
 	public String toString() {
 		return "Species [id=" + id + ", speciesName=" + speciesName + "]";
 	}
+	
 	
 }
