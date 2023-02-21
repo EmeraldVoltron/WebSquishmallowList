@@ -18,6 +18,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="squishmallows")
 public class Squishmallow {
+	
+
 	@Id
 	@GeneratedValue
 	@Column(name="ID")
@@ -100,6 +102,11 @@ public class Squishmallow {
 	 */
 	public void setSize(String size) {
 		this.size = size;
+	}
+	
+	@Override
+	public String toString() {
+		return "Squishmallow [id=" + id + ", size=" + size + ", name=" + name + ", type=" + type + "]";
 	}
 	
 	

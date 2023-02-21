@@ -3,6 +3,8 @@
 	<persistence-unit name="WebSquishmallowList" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>model.Squishmallow</class>
+		<class>model.Species</class>
+		<class>model.SquishDetails</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/squishmallows"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
